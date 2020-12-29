@@ -1,0 +1,26 @@
+/* * {
+   border: 1px solid red !important;
+} */
+
+#container {
+  display: grid; /* or inline-flex */
+  grid-template-columns: 25% [middle-start] 50% [middle-end] 25%;
+  grid-template-rows: auto;
+}
+
+.item {
+/*   display: flex; */
+  grid-column-start: middle-start;
+}
+
+.item ul{
+  list-style-type: none;
+  padding: 0;
+  border: 1px solid #ddd;
+}
+.item li{
+  font-family: "Arial", sans-serif;
+  font-variant: small-caps;
+  padding: 8px 16px;
+  border-bottom: 1px solid #ddd;
+}

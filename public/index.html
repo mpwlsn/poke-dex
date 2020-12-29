@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang ="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>Pokemon API</title>
+    <script src="" charset="utf-8"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://unpkg.com/pokeapi-js-wrapper/dist/index.js"></script>
+    <script> const P = new Pokedex.Pokedex(); </script>
+    <link rel="stylesheet" href="poke.css">
+  </head>
+  <body>
+    <h1>Hello</h1>
+
+    <div id="app">
+
+      <select v-model="name" @change="getPoke()">
+        <option disabled value="">Please select one</option>
+        <option>golduck</option>
+        <option>pikachu</option>
+        <option>jigglypuff</option>
+      </select>
+
+      <div id="container">
+
+        <div class="item">
+          <h2>{{name}}</h2>
+          <img v-bind:src="image"/>
+          <div>
+            <ul>
+              <li v-for="stat in poke_stats">{{stat.stat.name}}:          {{stat.base_stat}}</li>
+            </ul>
+
+          </div>
+        </div>
+        <div class="item">
+            <span>Hi</span>
+        </div>
+      </div>
+    </div>
+    <script src="pokemon.js"></script>
+  </body>
+</html>
